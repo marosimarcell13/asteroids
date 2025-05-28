@@ -8,6 +8,10 @@ def main():
     #Initalize pygame
     pygame.init()
 
+    #Set game clock
+    dt = 0
+    clock = pygame.time.Clock()
+
     #Create display with SCREEN_WIDTH and SCREEN_HEIGHT form constants
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
@@ -16,7 +20,8 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        screen.fill("black")        
+        screen.fill("black")
+        dt = clock.tick(60)/1000        
 
     pygame.display.flip()
 
